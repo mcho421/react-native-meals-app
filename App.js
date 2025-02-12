@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -44,9 +44,13 @@ export default function App() {
             name="MealDetail"
             component={MealDetailScreen}
             options={({ route }) => {
-              console.log(route)
-              const meal = MEALS.find((meal) => meal.id === route.params.mealId)
-              return { title: meal.title };
+              console.log(route);
+              const meal = MEALS.find(
+                (meal) => meal.id === route.params.mealId
+              );
+              return {
+                title: meal.title,
+              };
             }}
           />
         </Stack.Navigator>
